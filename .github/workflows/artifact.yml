@@ -22,6 +22,7 @@ jobs:
           cd ${{ github.workspace }}/onlyoffice-wordpress-block
           npm install
           npm run build
+          rm -rf node_modules
           cd ${{ github.workspace }}
           mkdir -p ./deploy/onlyoffice
           rsync -av --exclude='deploy' ./ ./deploy/onlyoffice
